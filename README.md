@@ -79,9 +79,10 @@ POST /route
 
 ---
 
-## 🧑‍💻 Developer
-
-**Shreyansh "Shrey" Singh**  
+## 🧑‍💻 Developers
+**Frontend Devloper : Satyam**  
+React | DSA | Full-stack learner
+**Backend Devloper : Shreyansh Singh**  
 Cybersecurity & AI enthusiast | Graph systems | Full-stack learner
 
 ---
