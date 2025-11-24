@@ -1,46 +1,107 @@
-# Getting Started with Create React App
+# 🚇 RouteMaster – Multi-Modal Journey Planner
+**A unified routing system that finds the fastest, cheapest, and most efficient routes across buses, metro, walking, and other transport modes.**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+RouteMaster models the transportation network as a **graph** using GTFS data and computes optimal paths using modern algorithms. It integrates with live schedules, transfers, and cost preferences to help users navigate cities smarter.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Features
 
-### `npm start`
+### 🔀 Multi-Modal Routing
+- Supports **Walking**, **Metro**, **Bus**, **Bike**, and mixed routes
+- Switches intelligently based on time, cost, and availability
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 📡 GTFS Integration
+- Uses official **Delhi Metro GTFS** dataset
+- Parses stops, trips, stop times, routes, and transfers
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 🚦 Smart Pathfinding
+- Graph algorithms like **Dijkstra**, **A***, or **Multi-Criteria Shortest Path**
+- Considers travel time, wait time, and transfer penalties
 
-### `npm test`
+### 📍 Interactive API
+- Start & destination inputs (lat/lng)
+- Preference options → **Fastest / Cheapest / Minimum Transfers**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🧩 Modular Architecture
+- Clean separation: GTFS parser, graph builder, router, API handler
+- Easy to extend for buses, autos, shared mobility, or real-time feeds
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🏗️ Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+routemaster/
+├── src/
+│ ├── data/ # GTFS datasets
+│ ├── graph/ # Graph construction + algorithms
+│ ├── routes/ # Fastest / Cheapest route functions
+│ ├── utils/ # Helpers, validators, converters
+│ └── server.js # API endpoint (if applicable)
+├── package.json
+├── README.md
+└── ...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 How to Run the Project
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 1️⃣ Install dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2️⃣ Start the server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 3️⃣ Hit the API route (example)
+POST /route
+{
+"start_lat": 28.6328,
+"start_lng": 77.2197,
+"end_lat": 28.5222,
+"end_lng": 77.2066,
+"preference": "cheapest"
+}
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## 🧠 Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Node.js / Express**
+- **GTFS Data Parsing**
+- **Graph Algorithms (Dijkstra, A*, Shortest Path)**
+- **GeoJSON, Haversine Distance**
+- **Modular, Scalable Architecture**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## 📚 Current Progress
+
+✔ GTFS integration  
+✔ Graph builder (Stations, edges, travel times)  
+✔ Base pathfinding logic  
+✔ API structure  
+⬜ Web UI (upcoming)  
+⬜ Live arrival feed  
+⬜ Mode scoring system  
+
+---
+
+## 🔮 Future Enhancements
+
+- Real-time metro/bus arrival updates
+- Google Maps-style UI
+- Cost comparison: Auto, Cab, Metro, Bus
+- Machine learning for predicting best routes during peak rush
+- Safety scores for night routes
+
+---
+
+## 🧑‍💻 Developer
+
+**Shreyansh "Shrey" Singh**  
+Cybersecurity & AI enthusiast | Graph systems | Full-stack learner
+
+---
+
+## ⭐ Want to Contribute?
+
+Pull requests are welcome!  
+Feel free to open issues for bugs, new features, or GTFS improvements.
