@@ -31,16 +31,16 @@ RouteMaster models the transportation network as a **graph** using GTFS data and
 
 ## 🏗️ Project Structure
 
-routemaster/
-├── src/
-│ ├── data/ # GTFS datasets
-│ ├── graph/ # Graph construction + algorithms
-│ ├── routes/ # Fastest / Cheapest route functions
-│ ├── utils/ # Helpers, validators, converters
-│ └── server.js # API endpoint (if applicable)
-├── package.json
-├── README.md
-└── ...
+routemaster/ \n
+├── src/ \n
+│ ├── data/ # GTFS datasets \n
+│ ├── graph/ # Graph construction + algorithms \n
+│ ├── routes/ # Fastest / Cheapest route functions \n
+│ ├── utils/ # Helpers, validators, converters \n
+│ └── server.js # API endpoint (if applicable) \n
+├── package.json \n
+├── README.md \n
+└── ... \n
 
 ---
 
